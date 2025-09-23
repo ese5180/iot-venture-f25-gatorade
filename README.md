@@ -12,6 +12,8 @@
 | Joaquin Revello Lerena | [joaquinr@seas.upenn.edu](joaquinr@seas.upenn.edu) |
 | Chirag Satapathy | [csat28@seas.upenn.edu](csat28@seas.upenn.edu) |
 
+**Weekly Meeting:** Wednesday 7pm
+
 **GitHub Repository URL:** [https://github.com/ese5180/iot-venture-f25-gatorade](https://github.com/ese5180/iot-venture-f25-gatorade)
 
 ## Concept Development
