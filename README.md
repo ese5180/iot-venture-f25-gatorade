@@ -80,12 +80,19 @@ Indirect Competitors
 
 No existing competitor combines continuous sensor monitoring with AI-guided mobile cleaning and chemical-free UV-C sterilization in a comprehensive building health management platform.
 
-
 ### Stakeholders
 
 ### System-Level Diagrams
 
 ### Security Requirements Specification
+
+| Requirement ID | Requirement Title | Description | Rationale |
+|----------------|-------------------|-------------|-----------|
+| SR-1 |  |  |  |
+| SR-2 |  |  |  |
+| SR-3 |  |  |  |
+| SR-4 |  |  |  |
+| SR-5 |  |  |  |
 
 ### Hardware Requirements Specification
 
