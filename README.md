@@ -97,5 +97,12 @@ No existing competitor combines continuous sensor monitoring with AI-guided mobi
 | HR-4 | Wireless Communication | System shall maintain mesh networking with 100m range and <2 second response time between sensors and bot. | Real-time monitoring and response is critical for building health management. |
 | HR-5 | Camera System | The bot shall include HD cameras with LED illumination for visual inspection and AI-powered contamination detection in low-light ductwork environments. | Visual documentation and AI analysis are essential for contamination identification and compliance reporting. |
 
-
 ### Software Requirements Specification
+
+| Requirement ID | Requirement Title | Description | Rationale |
+|----------------|-------------------|-------------|-----------|
+| SR-1 |  |  |  |
+| SR-2 |  |  |  |
+| SR-3 |  |  |  |
+| SR-4 |  |  |  |
+| SR-5 |  |  |  |
