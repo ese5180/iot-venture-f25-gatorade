@@ -89,4 +89,13 @@ No existing competitor combines continuous sensor monitoring with AI-guided mobi
 
 ### Hardware Requirements Specification
 
+| Requirement ID | Requirement Title | Description | Rationale |
+|----------------|-------------------|-------------|-----------|
+| HR-1 | Bot Size and Weight | The mobile bot shall be maximum 300mm x 100mm x 100mm (can change) and weigh less than 5kg to fit through standard commercial ductwork. | Must navigate existing HVAC systems without modifications or damage. |
+| HR-2 | UV-C Sterilization | The bot shall include UV-C LEDs with 360-degree coverage to achieve 99.99% pathogen elimination. | UV-C sterilization is the core technology differentiator for chemical-free cleaning. |
+| HR-3 | Sensor Durability | Sensor nodes shall operate in -10°C to +70°C, 0-95% humidity with IP65 protection, VOC and 12+ month battery life. | HVAC environments are harsh; sensors must survive without frequent maintenance. |
+| HR-4 | Wireless Communication | System shall maintain mesh networking with 100m range and <2 second response time between sensors and bot. | Real-time monitoring and response is critical for building health management. |
+| HR-5 | Camera System | The bot shall include HD cameras with LED illumination for visual inspection and AI-powered contamination detection in low-light ductwork environments. | Visual documentation and AI analysis are essential for contamination identification and compliance reporting. |
+
+
 ### Software Requirements Specification
