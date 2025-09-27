@@ -82,34 +82,86 @@ No existing competitor combines continuous sensor monitoring with AI-guided mobi
 
 ### Stakeholders
 
+We have reached out to several stakeholders, including emailing EOS at UPenn, and submitting web contact forms for LG and Hitachi, but have not solidified any individual stakeholder at this point.
+
+![alt text](image.png)
+
+Since we believe the current idea of our product will be more directed towards HVAC companies and building managment than maintenance staff, we continuing to reach out to additional companies (through sales departments) for feedback on our idea.
+
 ### System-Level Diagrams
+
+Create a device block diagram that details the power architecture, microcontroller, & peripherals.
+
+- Software configurable sensor node (extra hardware)
+- Robot
+
+Create a communication diagram.
+
+- System with robot or alternative gateway in diagram
 
 ### Security Requirements Specification
 
+#### Security Overview
+
+The system will ensure data, communications, and firmware integrity are protected from tampering, eavesdropping, and unauthorized access. Security measures particularly focus on safeguarding the gateway and nodes, which are in continuous operation and not always being observed.
+
+#### Security Definitions, Abbreviations
+
+- OTA: Over the air firmware updates
+- GUI: Graphic User Interface
+
+#### Security Functionality
+
 | Requirement ID | Requirement Title | Description | Rationale |
-|----------------|-------------------|-------------|-----------|
-| SR-1 |  |  |  |
-| SR-2 |  |  |  |
-| SR-3 |  |  |  |
-| SR-4 |  |  |  |
-| SR-5 |  |  |  |
+|----------------|-------------------|-------------|-----------|                                    |
+| SEC 01 | Gateway Firmware Integrity | Gateway shall run only firmware from signed OTA updates, and shall securely store keys | The gateway acts as a bridge between the sensor node mesh network and the cloud (data portal etc.), and compromise here could expose the client's network and leave them vulnerable to attacks and breaches |
+| SEC 02 | Autheticate Nodes | Each sensor node shall authenticate in the mesh network using unique key/certification and ignore messages from tampered systems | This prevents unauthorized devices from disrupting the mesh or tampering with the data at the hardware level. It also protects from counterfit devices being added to our network |
+| SEC 03 | Data Encryption | Communication from nodes, gateway and GUI interface shall be encrypted | This protects potentially sensitive IAQ and predictive maintenance data from eavesdropping and tampering at the data level |
 
 ### Hardware Requirements Specification
 
+#### Hardware Overview
+
+The system contains a mobile robot for HVAC navigation, duct cleaning operations and sensor node depolyment. Low power sensor nodes will be deployed in the HVAC system for data collection to identify system issues and enable predictive mainenance. There will also be a gateway node.
+
+#### Hardware Definitions, Abbreviations
+
+- HVAC: Heating, Ventilation, and Air Conditioning
+- VOCs: Volatile Organic Compounds
+- UV-C: Ultraviolet C - short-wavelength UV light used for chemical-free disinfection and sterilization
+
+#### Hardware Functionality
+
 | Requirement ID | Requirement Title | Description | Rationale |
 |----------------|-------------------|-------------|-----------|
-| HR-1 | Bot Size and Weight | The mobile bot shall be maximum 300mm x 100mm x 100mm (can change) and weigh less than 5kg to fit through standard commercial ductwork. | Must navigate existing HVAC systems without modifications or damage. |
-| HR-2 | UV-C Sterilization | The bot shall include UV-C LEDs with 360-degree coverage to achieve 99.99% pathogen elimination. | UV-C sterilization is the core technology differentiator for chemical-free cleaning. |
-| HR-3 | Sensor Durability | Sensor nodes shall operate in -10°C to +70°C, 0-95% humidity with IP65 protection, VOC and 12+ month battery life. | HVAC environments are harsh; sensors must survive without frequent maintenance. |
-| HR-4 | Wireless Communication | System shall maintain mesh networking with 100m range and <2 second response time between sensors and bot. | Real-time monitoring and response is critical for building health management. |
-| HR-5 | Camera System | The bot shall include HD cameras with LED illumination for visual inspection and AI-powered contamination detection in low-light ductwork environments. | Visual documentation and AI analysis are essential for contamination identification and compliance reporting. |
+| HRS 01 | Bot Size and Weight | The mobile bot shall be maximum 300mm x 100mm x 100mm (can change) and weigh less than 5kg to fit through standard commercial ductwork. | Must navigate existing HVAC systems without modifications or damage. |
+| HRS 02 | UV-C Sterilization | The bot shall include UV-C LEDs with 360-degree coverage to achieve 99.99% pathogen elimination. | UV-C sterilization is the core technology differentiator for chemical-free cleaning. |
+| HRS 03 | Sensor Durability | Sensor nodes shall operate in -10°C to +70°C, 0-95% humidity with IP65 protection, VOC and 12+ month battery life. | HVAC environments are harsh; sensors must survive without frequent maintenance. |
+| HRS 04 | Wireless Communication | System shall maintain mesh networking with 100m range and <2 second response time between sensors and bot. | Real-time monitoring and response is critical for building health management. |
+| HRS 05 | Camera System | The bot shall include HD cameras with LED illumination for visual inspection and AI-powered contamination detection in low-light ductwork environments. | Visual documentation and AI analysis are essential for contamination identification and compliance reporting. |
 
 ### Software Requirements Specification
 
+#### Software Overview
+
+The node/gateway software shall collect, process, and transmit sensor data HVAC sensor nodes to a centralized gateway. It shall manage sensor feature toggling, battery optimization, and secure communications across BLE mesh and Wi-Fi networks.
+
+The robot software shall collect and process real time controls and data for navitagion and cleaning operations.
+
+#### Software Users
+
+- Facility managers at commercial buildings (offices, hospitals, schools, retail) using IoT dashboard
+- HVAC technicians operating cleaning robot
+- Building maintenance staff monitoring the IoT dashboard
+- Property manager
+
+#### Software Abbreviations
+
+- MCU: Microcontroller Unit
+
+#### Software Functionality
+
 | Requirement ID | Requirement Title | Description | Rationale |
 |----------------|-------------------|-------------|-----------|
-| SR-1 |  |  |  |
-| SR-2 |  |  |  |
-| SR-3 |  |  |  |
-| SR-4 |  |  |  |
-| SR-5 |  |  |  |
+| SRS 01 | Battery Optimization | Software shall use MCU low power modes, intermmittent sensing and transmission to extend battery life to at least one year | It is important to maximize sensor lifetime to minimize disruptions and maintenance on the network |
+| SRS 02 | Robot Deployment/Guidance | IoT dashboard shall alert operators to provide precise contamination or fault locations for targeted cleaning/work orders | Reduces manual inspection time and system downtime |
