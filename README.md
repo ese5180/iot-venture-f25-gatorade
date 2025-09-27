@@ -90,14 +90,17 @@ Since we believe the current idea of our product will be more directed towards H
 
 ### System-Level Diagrams
 
-Create a device block diagram that details the power architecture, microcontroller, & peripherals.
+#### Sensor Node
 
-- Software configurable sensor node (extra hardware)
-- Robot
+![alt text](images/5180_Sensor_Node.drawio.png)
 
-Create a communication diagram.
+#### Gateway
 
-- System with robot or alternative gateway in diagram
+![alt text](images/5180_Gateway.drawio.png)
+
+#### Robot
+
+We will start by leveraging an existing robot and prototyping on top/hacking the robot to add cleaning functionality.
 
 ### Security Requirements Specification
 
