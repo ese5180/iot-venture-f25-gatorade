@@ -118,7 +118,7 @@ The system will ensure data, communications, and firmware integrity are protecte
 #### Security Functionality
 
 | Requirement ID | Requirement Title | Description | Rationale |
-|----------------|-------------------|-------------|-----------|                                    |
+|----------------|-------------------|-------------|-----------|
 | SEC 01 | Gateway Firmware Integrity | Gateway shall run only firmware from signed OTA updates, and shall securely store keys | The gateway acts as a bridge between the sensor node mesh network and the cloud (data portal etc.), and compromise here could expose the client's network and leave them vulnerable to attacks and breaches |
 | SEC 02 | Autheticate Nodes | Each sensor node shall authenticate in the mesh network using unique key/certification and ignore messages from tampered systems | This prevents unauthorized devices from disrupting the mesh or tampering with the data at the hardware level. It also protects from counterfit devices being added to our network |
 | SEC 03 | Data Encryption | Communication from nodes, gateway and GUI interface shall be encrypted | This protects potentially sensitive IAQ and predictive maintenance data from eavesdropping and tampering at the data level |
