@@ -100,7 +100,9 @@ Since we believe the current idea of our product will be more directed towards H
 
 #### Robot
 
-We will start by leveraging an existing robot and prototyping on top/hacking the robot to add cleaning functionality.
+We will start by leveraging an existing robot and prototyping on top/hacking the robot to add cleaning functionality. Below is a very simple diagram indicating our added peripherals, which we will first attempt to power from the robot's power architecture, but add external battery/power management if necessary.
+
+![alt text](images/5180_Robot.drawio.png)
 
 ### Security Requirements Specification
 
