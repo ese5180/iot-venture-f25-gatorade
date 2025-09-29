@@ -170,3 +170,7 @@ The robot software shall collect and process real time controls and data for nav
 |----------------|-------------------|-------------|-----------|
 | SRS 01 | Battery Optimization | Software shall use MCU low power modes, intermmittent sensing and transmission to extend battery life to at least one year | It is important to maximize sensor lifetime to minimize disruptions and maintenance on the network |
 | SRS 02 | Robot Deployment/Guidance | IoT dashboard shall alert operators to provide precise contamination or fault locations for targeted cleaning/work orders | Reduces manual inspection time and system downtime |
+
+## Pitch 1
+
+[Course Pitch 1 Slides](https://docs.google.com/presentation/d/1BxViGAQksIzPptYEwyB8goSnDLoXB-iTrtr7Zekc3ss/edit?usp=sharing)
