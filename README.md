@@ -174,3 +174,11 @@ The robot software shall collect and process real time controls and data for nav
 ## Pitch 1
 
 [Course Pitch 1 Slides](https://docs.google.com/presentation/d/1BxViGAQksIzPptYEwyB8goSnDLoXB-iTrtr7Zekc3ss/edit?usp=sharing)
+
+## Wireless Demo
+
+### Commit your GitHub repository to the IoT Venture GitHub Classroom assignment
+
+### Confirm that each team member can pull the repository from GitHub, build, and flash the code to their device
+
+### Video: Demonstrate all of your product’s wireless features using your dev board in a Zephyr project
