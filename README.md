@@ -177,8 +177,10 @@ The robot software shall collect and process real time controls and data for nav
 
 ## Wireless Demo
 
-### Commit your GitHub repository to the IoT Venture GitHub Classroom assignment
+[Gateway Repo](https://github.com/ese5180/t06_gatorade-gateway)
 
-### Confirm that each team member can pull the repository from GitHub, build, and flash the code to their device
+[Mesh Node Repo](https://github.com/ese5180/t06_gatorade-mesh_node)
 
-### Video: Demonstrate all of your product’s wireless features using your dev board in a Zephyr project
+We have pulled and compiled the code on the different machines.
+
+We have ordered sensors and the seeed studio XIAO nRF54L15 (s) for our ble mesh nodes.
