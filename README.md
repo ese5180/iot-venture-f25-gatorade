@@ -339,6 +339,83 @@ The robot software shall collect and process real time controls and data for nav
 
 ### Create a rough power budget for your end device
 
+#### HVAC Sensor Node — Power Budget
+
+The node uses airflow (forced air) inside the duct to harvest power while measuring air quality and environmental parameters.
+
+#### System Overview
+
+**Components:**
+- nRF54L15 Microcontroller (BLE)
+- SPS30 PM2.5 Sensor
+- BME680 Temperature, Humidity & Gas Sensor
+- 3.7V 4500mAh Li-ion Battery
+- LiPo Charger Module
+- Airflow Dynamo (3–12V, 1500 RPM) for energy harvesting
+
+**Sampling Interval:** Every 10 minutes  
+**Airflow Velocity (assumed):** 5 m/s  
+**Regulator Efficiency:** ~90%
+
+---
+
+#### Power Consumption Breakdown
+
+| Component | Active Current | Active Time per Cycle | Duty Cycle | Avg. Current |
+|------------|----------------|------------------------|-------------|--------------|
+| nRF54L15 (MCU + BLE) | 5 mA | 0.5 s | 0.083% | 0.004 mA |
+| SPS30 PM2.5 Sensor | 60 mA | 30 s | 5% | 3.0 mA |
+| BME680 Sensor | 1 mA | 1 s | 0.167% | 0.002 mA |
+| Regulator & Misc Losses | - | - | - | 0.10 mA |
+| **Total Average (3.3V Rail)** | - | - | - | **≈ 3.1 mA** |
+
+**Average Power:** 3.3V × 3.1mA = **10.2 mW**  
+**Daily Energy Use:** 10.2mW × 24h = **0.245 Wh/day**
+
+
+#### Battery-Only Operation (No Harvest)
+
+**Battery:** 3.7V, 4500mAh = 16.65Wh  
+
+**Runtime = 16.65Wh / 0.245Wh/day ≈ 68 days**
+
+> Without any energy harvesting, the node can operate for roughly **2 months** on a full charge under the assumed duty cycle.
+
+---
+
+####  With Airflow Power Harvesting
+
+The node uses a small turbine (dynamo) to convert duct airflow into electrical energy.  
+Power generation depends heavily on airflow velocity and turbine diameter.
+
+| Rotor Diameter | Air Speed | Theoretical Power | Practical Electrical Output | Status |
+|----------------|------------|-------------------|------------------------------|---------|
+| 50 mm | 2.5 m/s | 3.7 mW | ~3–9 mW | ❌ Insufficient |
+| 50 mm | 5 m/s | 29 mW | **~15 mW** | ✅ Marginally Self-Powered |
+| 50 mm | 10 m/s | 236 mW | ~120 mW | ✅ Surplus Power |
+| 100 mm | 5 m/s | 118 mW | ~60 mW | ✅ Comfortable Margin |
+
+**Node Power Need:** ~10.2 mW  
+**Harvest Target:** ≥10.2 mW average for sustained operation
+
+> At 5 m/s airflow, a 50mm turbine can roughly match the node’s power needs.  
+> With 100mm or higher airflow speed, the system can run **indefinitely** while charging the battery.
+
+## Summary
+
+| Mode | Avg. Power | Energy Source | Expected Runtime |
+|------|-------------|----------------|------------------|
+| Battery Only | 10.2 mW | 3.7V 4500mAh | ~68 days |
+| With Harvest (5 m/s, 50mm rotor) | 10.2 mW load / ~15 mW harvest | Airflow + Battery | Indefinite |
+| With Harvest (Low Airflow <3 m/s) | <10 mW harvest | Airflow + Battery | Partial support, shorter runtime |
+
+> With a 4500mAh battery, the node can last about **2 months** without airflow.  
+> In active ducts (≥5 m/s airflow), the **harvested energy can fully sustain** the system indefinitely.
+
+#### Gateway (nRF7002 dev kit)
+
+- **Powering:** The gateway uses an **nRF7002 dev kit** and is powered via an **external adapter** (mains). Hence we will **not** include the gateway in the battery runtime calculations.  
+
 ### Create a detailed Bill of Materials for the physical elements of your product
 
 [Hardware and Software BOM](https://docs.google.com/spreadsheets/d/1fg5vvXKbMqEWlq2BGgU8zHJWxmShasZ8dm5vu3x20fU/edit?usp=drive_link)
@@ -346,5 +423,114 @@ The robot software shall collect and process real time controls and data for nav
 ### Financial Model
 
 #### Complete your product’s financial model, including a pricing strategy and sale price
+
+## Product Financial Model & Pricing Strategy
+
+This section outlines our HVAC monitoring ecosystem’s financial model, including the **sensor node**, **inspection robot**, and **dashboard platform**. The goal is to balance **hardware margins** with **recurring revenue** from rentals and subscriptions.
+
+### 1. Sensor Node
+
+| Item | Cost per Unit |
+|------|---------------|
+| Components + Mechanical Parts | $130 |
+| Assembly, Testing & QA | $15 |
+| Logistics & Shipping | $10 |
+| Insurance (transport + field warranty) | $5 |
+| **Total Manufacturing Cost** | **$160** |
+
+**Tiered Selling Price**
+
+| Order Size | Selling Price per Unit |
+|------------|-----------------------|
+| 1–10 units | $260 |
+| 11–50 units | $255 |
+| 51–100 units | $250 |
+| 100+ units | $240 |
+
+**Notes:**
+- Covers insurance, assembly, testing, shipping, and support.  
+- Tiered pricing encourages larger orders while maintaining margins.  
+- Margin target: ~40%.  
+
+
+### 2. Gateway (nRF7200 Dev Kit)
+
+| Item | Cost |
+|------|------|
+| nRF7200 Dev Kit | $100 |
+| Protective Case | $20 |
+| Power Adapter | $15 |
+| **Total Cost** | **$135** |
+| **Selling Price** | **$200** |
+
+**Notes:**
+- Gateway is mains-powered via adapter; we do **not include battery costs**.  
+- Could be sold as a one-time purchase with sensor nodes or included in enterprise packages.  
+- Margin can be ~40–50% depending on bundle pricing.
+
+### 3. Inspection Robot
+
+| Parameter | Estimate |
+|------------|-----------|
+| **Full Cost (Current Version)** | Bought of the shelf just for demo |
+| **Rental Model** | $100–200 per day, depending on service package |
+| **Future Plan** | In-house development to reduce cost to ~$8,000–12,000 per unit depending on add ons |
+
+**Notes:**
+- Rental supports short-term HVAC inspection contracts.  
+- Ideal for maintenance companies or pilot deployments.  
+- In-house production will allow sale or lease options in the future.
+- Large companies could buy the complete bot.
+
+### 4. Dashboard & Analytics Platform
+
+**Subscription Pricing (per month)**
+
+| Tier | Features | Monthly Price |
+|------|-----------|---------------|
+| Standard | Real-time monitoring, OTA updates, baseline security | $15 |
+| Advanced | Analytics, reports, predictive insights | $30 |
+
+**Notes:**
+- Standard tier ensures device security and basic monitoring.  
+- Advanced tier generates recurring revenue via analytics.  
+- Enterprise or volume accounts can receive custom pricing.
+
+---
+
+### Summary
+
+| Component | Cost | Selling / Rental Price | Revenue Model |
+|------------|------|------------------------|----------------|
+| Sensor Node | $150 | $220–$250 (tiered) | One-time sale |
+| Gateway | $135 | $180–$200 (suggested) | One-time sale / bundle |
+| Inspection Robot | $10,000 | $150–250/day | Rental |
+| Dashboard | — | $10–25/month | Subscription |
+
+---
+
+**Goal:**  
+Maintain a ~30 - 40% gross margin on hardware, while generating recurring revenue from **dashboard subscriptions** and **robot rentals**. Over time, reducing hardware costs and increasing analytics adoption will improve overall profitability.
+
+
+### Example: Family Sizes — Total Cost, Sale Price & Profit
+
+| Family Size (Sensor Nodes) | Gateways Needed | Total Manufacturing Cost | Total Sale Price | Total Profit | Average Profit Margin |
+|----------------------------|----------------|------------------------|-----------------|--------------|----------------------|
+| 1 | 1 | $150×1 + $135×1 = $285 | $260 + $200 = $460 | $175 | 38% |
+| 5 | 1 | $150×5 + $135×1 = $885 | $260×5 + $200 = $1,500 | $615 | 41% |
+| 10 | 1 | $150×10 + $135×1 = $1,635 | $260×10 + $200 = $2,800 | $1,165 | 41% |
+| 20 | 2 | $150×20 + $135×2 = $3,270 | $255×20 + $400 = $5,500 | $2,230 | 41% |
+| 50 | 5 | $150×50 + $135×5 = $7,875 | $255×50 + $1,000 = $13,750 | $5,875 | 43% |
+| 100 | 10 | $150×100 + $135×10 = $16,350 | $250×100 + $2,000 = $27,000 | $10,650 | 39% |
+
+**Notes / Redundant Charges:**  
+- Extra shipping or logistics beyond standard included costs  
+- Taxes or import duties  
+- Optional insurance, extended warranty, or installation fees
+
+
+
+
 
 
