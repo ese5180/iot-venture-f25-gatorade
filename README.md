@@ -510,7 +510,7 @@ This section outlines our HVAC monitoring ecosystem’s financial model, includi
 ---
 
 **Goal:**  
-Maintain a ~30 - 40% gross margin on hardware, while generating recurring revenue from **dashboard subscriptions** and **robot rentals**. Over time, reducing hardware costs and increasing analytics adoption will improve overall profitability.
+Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenue from **dashboard subscriptions** and **robot rentals**. Over time, reducing hardware costs and increasing analytics adoption will improve overall profitability.
 
 
 ### Example: Family Sizes — Total Cost, Sale Price & Profit
