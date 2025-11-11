@@ -184,3 +184,5 @@ The robot software shall collect and process real time controls and data for nav
 We have pulled and compiled the code on the different machines.
 
 We have ordered sensors and the seeed studio XIAO nRF54L15 (s) for our ble mesh nodes.
+
+## Concept Refinement
