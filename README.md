@@ -341,8 +341,9 @@ The robot software shall collect and process real time controls and data for nav
 
 ### Create a detailed Bill of Materials for the physical elements of your product
 
-Hardware and Software BOM in the sheets
+[Hardware and Software BOM](https://docs.google.com/spreadsheets/d/1fg5vvXKbMqEWlq2BGgU8zHJWxmShasZ8dm5vu3x20fU/edit?usp=drive_link)
 
 ### Financial Model
 
 #### Complete your product’s financial model, including a pricing strategy and sale price
+
