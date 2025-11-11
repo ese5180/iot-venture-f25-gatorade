@@ -258,7 +258,7 @@ Indirect Competitors
 
 ##### Sensor Node
 
-![alt text](images/Updated_Sensor_Node.drawio.png)
+![alt text](Update_Sensor_Node.drawio.png)
 
 ##### Gateway
 
@@ -346,4 +346,5 @@ The robot software shall collect and process real time controls and data for nav
 ### Financial Model
 
 #### Complete your product’s financial model, including a pricing strategy and sale price
+
 
