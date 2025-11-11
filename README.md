@@ -253,6 +253,9 @@ Indirect Competitors
 
 #### Stakeholders
 
+We have continued reaching out to stakeholders, but have gotten some feedback but having hard time finalizing official stakeholder. Our fallback is to work directly with a residential facilities at one of our apartment buildings for access to someone with direct HVAC experience.
+
+Outside of our stakeholder efforts, we have scheduled a meeting for external funding, so while a bit different, we have seen interest in the venture.
 
 #### System-level Diagrams
 
@@ -512,7 +515,6 @@ This section outlines our HVAC monitoring ecosystem’s financial model, includi
 **Goal:**  
 Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenue from **dashboard subscriptions** and **robot rentals**. Over time, reducing hardware costs and increasing analytics adoption will improve overall profitability.
 
-
 ### Example: Family Sizes — Total Cost, Sale Price & Profit
 
 | Family Size (Sensor Nodes) | Gateways Needed | Total Manufacturing Cost | Total Sale Price | Total Profit | Average Profit Margin |
@@ -528,9 +530,3 @@ Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenu
 - Extra shipping or logistics beyond standard included costs  
 - Taxes or import duties  
 - Optional insurance, extended warranty, or installation fees
-
-
-
-
-
-
