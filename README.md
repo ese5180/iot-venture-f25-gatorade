@@ -530,3 +530,19 @@ Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenu
 - Extra shipping or logistics beyond standard included costs  
 - Taxes or import duties  
 - Optional insurance, extended warranty, or installation fees
+
+## Fleet Management
+
+![alt text](<images/PHOTO-2025-11-23-20-10-45 2.jpg>)
+
+![alt text](<images/PHOTO-2025-11-23-20-10-45 3.jpg>)
+
+![alt text](images/PHOTO-2025-11-23-20-10-45.jpg)
+
+![alt text](images/PHOTO-2025-11-23-20-11-21.jpg)
+
+![alt text](<images/PHOTO-2025-11-23-20-51-14 2.jpg>)
+
+![alt text](images/PHOTO-2025-11-23-20-51-14.jpg)
+
+[Zipped Sensor Node Matter](sps30_matter_sensor.zip)
