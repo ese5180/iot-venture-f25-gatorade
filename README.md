@@ -593,3 +593,5 @@ The dashboard could also be hosted from a client's local server as well, if they
 ### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
 
 firmware included
+
+node - environmental_monitor1.zip
