@@ -554,6 +554,8 @@ Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenu
 
 [https://github.com/cs28-droid/Prisma_Air/tree/main](https://github.com/cs28-droid/Prisma_Air/tree/main)
 
+https://cs28-droid.github.io/Prisma_Air/
+
 ### (3.14.2) What parts of your project would you consider a success? Why?
 
 We did a good job with the business concept development. We struggled at first to find a concept that could be differentiated from existing companies, and based on stakeholder and pitch day responses, our solution appears to have interest. While it certainly could be refined further if it were to develop into a startup, we already considered many useful data centered features. Beyond the baseline data for maintenance optimizations, a key feature we discovered was compliance report automation. Our solution already builds from the increasing air quality compliance requirements for many facilities, so rolling report automation into the system managers would use for data backed metrics made sense. From a business survivability standpoint, we enter a large and still growing market with a differentiating product line. Though exact pricing might change on a per contract basis, our baseline revenue model uses upfront costs to cover hardware development and prodcution alongside a recurring subscription model to cover firmware updates for security and performance, as well as dashboard analytics features. PrismaAir positions as a three-layer system (Monitor, Predict, Clean), rather than simply a sensor.
@@ -584,10 +586,25 @@ The dashboard could also be hosted from a client's local server as well, if they
 
 ### (3.14.6) Images of your final product hardware implementation
 
+<figure>
+<img src="images/S1.jpg" height="300">
+<img src="images/S2.jpg" height="300">
+<img src="images/S3.jpg" height="300">
+<img src="images/Bot.jpg" height="300">
+<img src="images/CI Pipeline.png" height="250">
+<img src="images/Screenshot 2025-12-07 183945.png" height="300">
+<img src="images/Screenshot 2025-12-08 160600.png" height="300">
+</figure>
+
+
 ### (3.14.7) An exactly 400x400 pixel .jpg image that captures your project (used for the course website)
+
+![alt text](PrismaAir_Logo.png)
 
 ### (3.14.8) A <=5 minute video
 
+https://youtu.be/BKmg4EdCK9g
+
 ### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
 
-firmware included
+Firmware included in the repo
