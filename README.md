@@ -568,7 +568,7 @@ Another key feature we struggled with was implementing Firmware Over-The-Air (FO
 
 ### (3.14.4) If you had to do it again, how might you change your development approach given the finite time and money resources?
 
-One thing we did very well with here was removing the mobile robot from our development scope early on to focus on the sensor nodes. 
+One thing we did very well with here was removing the mobile robot from our development scope early on to focus on the sensor nodes. I think the biggest improvement here would be in focussed efforts. Our team was very busy throughout the semester and therefore our efforts were a bit more on and off until closer to the end of the development timeline. I think if we were focussed solely on this task, our efforts would have come together to help reduce wasted time and solve implementation issues that we were unable to resolve separately. Particularly with FOTA, the difficulties pushed that way beyond the initially intended schedule, not only for our group but many others, and I think moving to a different protocol for the FOTA implementation instead of continuing to pursue the same WiFi approaches that had been already been unsuccessful.
 
 ### (3.14.5) Would you change your system design after this development cycle?
 
