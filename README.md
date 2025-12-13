@@ -588,6 +588,8 @@ The dashboard could also be hosted from a client's local server as well, if they
 
 ### (3.14.8) A <=5 minute video
 
+[video](https://youtu.be/BKmg4EdCK9g)
+
 ### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
 
 firmware included
