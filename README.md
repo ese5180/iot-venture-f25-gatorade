@@ -527,6 +527,7 @@ Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenu
 | 100 | 10 | $150×100 + $135×10 = $16,350 | $250×100 + $2,000 = $27,000 | $10,650 | 39% |
 
 **Notes / Redundant Charges:**  
+
 - Extra shipping or logistics beyond standard included costs  
 - Taxes or import duties  
 - Optional insurance, extended warranty, or installation fees
@@ -546,3 +547,45 @@ Maintain a ~35 - 40% gross margin on hardware, while generating recurring revenu
 ![alt text](images/PHOTO-2025-11-23-20-51-14.jpg)
 
 [Zipped Sensor Node Matter](sps30_matter_sensor.zip)
+
+## Final Website
+
+### (3.14.1) Create a website & list your GitHub Website URL
+
+[https://github.com/cs28-droid/Prisma_Air/tree/main](https://github.com/cs28-droid/Prisma_Air/tree/main)
+
+### (3.14.2) What parts of your project would you consider a success? Why?
+
+We did a good job with the business concept development. We struggled at first to find a concept that could be differentiated from existing companies, and based on stakeholder and pitch day responses, our solution appears to have interest. While it certainly could be refined further if it were to develop into a startup, we already considered many useful data centered features. Beyond the baseline data for maintenance optimizations, a key feature we discovered was compliance report automation. Our solution already builds from the increasing air quality compliance requirements for many facilities, so rolling report automation into the system managers would use for data backed metrics made sense. From a business survivability standpoint, we enter a large and still growing market with a differentiating product line. Though exact pricing might change on a per contract basis, our baseline revenue model uses upfront costs to cover hardware development and prodcution alongside a recurring subscription model to cover firmware updates for security and performance, as well as dashboard analytics features. PrismaAir positions as a three-layer system (Monitor, Predict, Clean), rather than simply a sensor.
+
+On the technical side, our key success was the development of the sensor nodes. These are the backbone of the entire system, and as such, were the main focus of development through the semester. We designed housing to integrate a vertical wind turbine for energy harvesting alongside high quality enviornmental sensors (SPS30, BME680). Subject to testing, the nodes' energy harvesting capability could allow them to operate indefinately, solving issues with replacing batteries in the HVAC system being just as inefficient as current HVAC maintenence schedules. A key move for keeping the prototypes compact was moving our compute platform the nRF54L15 Xiao, a much smaller development board. Our proof of concept showed multiple devices successfully monitoring and relaying data through to our web dashboard.
+
+### (3.14.3) What parts of your project didn’t go well? Why?
+
+On the sensor node front, we had issues developing the network communication. We first attempted BLE mesh, but even with working from the Nordic example code, did not find early success. On feedback from a course guest speaker, he suggested we move to matter. Our team put a lot of development effort into working with matter, but faced difficulties from minimal examples, as well as documentation and support still growing.
+
+Another key feature we struggled with was implementing Firmware Over-The-Air (FOTA) updates. We used both the AWSIoT and Memfault platforms to implement FOTA through our gateway, but faced difficulting with memory sizes at compile time with some attempts, and runtime issues including stack overflows and wifi disconnections. As emphasized in the course, we would like to have signed FOTA to maximize security on our device platform from the jump, but doing so will take some additional development effort.
+
+### (3.14.4) If you had to do it again, how might you change your development approach given the finite time and money resources?
+
+One thing we did very well with here was removing the mobile robot from our development scope early on to focus on the sensor nodes. 
+
+### (3.14.5) Would you change your system design after this development cycle?
+
+One thing to change is adding additional sensors to the node architecutre, inlcuding differential pressure. This would go beyond the air quality monitoring to help directly with system health, allowing detection of clogged filters or failing fans. on this node, different node types could be developed for placement in different parts of the system. A prime example is having IMU focussed nodes for predictive maintenance on mechanical systems such as fan motors.
+
+A potential concern with our current nodes is also in sampling. Since the nodes stick in partially from a side of the vent, they may not give a sufficiently robust picture of what is happening in the vents. An alternative sampling method such as having tubes from inside the duct come out to an external sensor setup pulling samples from different parts of that duct section could provide more detailed information.
+
+Another potential concern is our self-powering approach. Instead of dealing with the potential issues of battery replacement and forced air generation, we could link the system to existing building low voltage power lines. This would be much more reliable and maintenance-free.
+
+Similarly, outside of the course context, it may make more sense to use a wired communication protocol for the node network. A simple CAN bus or a custom low wire protocol could be fairly simple added in hardware, only requiring a small amount of additional harnessing effort during setup, and be lower power and more reliable than the bluetooth approach currently used. A gateway would still be connected to aggregate and forward data to the internet, but this could be either wifi or wired internet.
+
+### (3.14.6) Images of your final product hardware implementation
+
+### (3.14.7) An exactly 400x400 pixel .jpg image that captures your project (used for the course website)
+
+### (3.14.8) A <=5 minute video
+
+### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
+
+firmware included
