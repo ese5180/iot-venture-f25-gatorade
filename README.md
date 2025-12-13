@@ -580,6 +580,8 @@ Another potential concern is our self-powering approach. Instead of dealing with
 
 Similarly, outside of the course context, it may make more sense to use a wired communication protocol for the node network. A simple CAN bus or a custom low wire protocol could be fairly simple added in hardware, only requiring a small amount of additional harnessing effort during setup, and be lower power and more reliable than the bluetooth approach currently used. A gateway would still be connected to aggregate and forward data to the internet, but this could be either wifi or wired internet.
 
+The dashboard could also be hosted from a client's local server as well, if they perfer their data not leave their facilities over the public network.
+
 ### (3.14.6) Images of your final product hardware implementation
 
 ### (3.14.7) An exactly 400x400 pixel .jpg image that captures your project (used for the course website)
