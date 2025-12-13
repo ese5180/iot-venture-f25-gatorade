@@ -603,8 +603,18 @@ The dashboard could also be hosted from a client's local server as well, if they
 
 ### (3.14.8) A <=5 minute video
 
+<<<<<<< HEAD
 https://youtu.be/BKmg4EdCK9g
 
 ### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
 
 Firmware included in the repo
+=======
+[video](https://youtu.be/BKmg4EdCK9g)
+
+### (3.14.9) Ensure your source code for all firmware and software is uploaded into this repository
+
+firmware included
+
+node - environmental_monitor1.zip
+>>>>>>> 6443421fd69a7da142b5d81d59e23a973a431bb5
